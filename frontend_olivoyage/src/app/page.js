@@ -31,7 +31,16 @@ export default function Home() {
 
   return (
     <>
-     <div>{data}</div>
+     
+     <main>
+        {/* Affichage conditionnel en fonction de l'état du chargement et des erreurs */}
+        {loading && !error && <div>Données en cours de chargement !</div>}
+        {!loading && !error && data && (
+          <div>{data}</div>
+        )}
+        {!loading && error && <div>Une erreur est survenue</div>}
+      </main>
+
     </>
   );
 }
