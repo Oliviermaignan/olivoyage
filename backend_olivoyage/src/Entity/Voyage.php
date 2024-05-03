@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: VoyageRepository::class)]
 class Voyage
@@ -14,43 +15,54 @@ class Voyage
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('api_voyage_index')]
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups('api_voyage_index')]
     private ?\DateTimeInterface $dateDepart = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
+    #[Groups('api_voyage_index')]
     private ?\DateTimeInterface $dateFin = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_voyage_index')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_voyage_index')]
     private ?string $pays = null;
 
     #[ORM\Column]
+    #[Groups('api_voyage_index')]
     private ?int $prix = null;
 
     #[ORM\Column]
+    #[Groups('api_voyage_index')]
     private ?int $nombreVoyageurs = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_voyage_index')]
     private ?string $image = null;
 
     /**
      * @var Collection<int, categorie>
      */
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'voyages')]
+    #[Groups('api_voyage_index')]
     private Collection $categorie;
 
     /**
      * @var Collection<int, Client>
      */
     #[ORM\OneToMany(targetEntity: Client::class, mappedBy: 'voyage')]
+    #[Groups('api_voyage_index')]
     private Collection $clients;
 
     #[ORM\ManyToOne(inversedBy: 'voyages')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Groups('api_voyage_index')]
     private ?User $user = null;
 
     public function __construct()

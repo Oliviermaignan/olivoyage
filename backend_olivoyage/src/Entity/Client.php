@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ClientRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ClientRepository::class)]
 class Client
@@ -12,6 +13,7 @@ class Client
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('api_voyage_index')]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -21,6 +23,7 @@ class Client
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_voyage_index')]
     private ?string $email = null;
 
     #[ORM\Column(type: Types::TEXT)]

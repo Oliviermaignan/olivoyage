@@ -17,7 +17,7 @@ class VoyageController extends AbstractController
     #[Route('s', name: 'index', methods: ['GET'])]
     public function index(VoyageRepository $voyageRepository): Response
     {
-
+        // a changer pour le cote admin
         $voyages = $voyageRepository->findAll();
 
         return $this->json([
