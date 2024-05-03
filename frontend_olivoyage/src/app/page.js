@@ -1,7 +1,10 @@
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
+
 import { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function Home() {
 
@@ -14,7 +17,7 @@ export default function Home() {
       // Déclenchement de la récupération des données de personnages au montage du composant.
       try {
         fetch(
-          "http://127.0.0.1:8000/voyages"
+          "http://127.0.0.1:8000/api/voyages"
         )
           .then((response) => response.json()) // Transformation de la réponse en JSON.
           .then((data) => {
@@ -27,20 +30,18 @@ export default function Home() {
       }
     }, []);
 
-
+    console.log(data);
 
   return (
     <>
-     
+     <Navbar/>
      <main>
         {/* Affichage conditionnel en fonction de l'état du chargement et des erreurs */}
-        {loading && !error && <div>Données en cours de chargement !</div>}
-        {!loading && !error && data && (
-          <div>{data}</div>
-        )}
+        {loading && !error && <><div>Données en cours de chargement !</div></>}
+        {!loading && !error && data && (<><div className="bg-warning">{data.data}</div></>)}
         {!loading && error && <div>Une erreur est survenue</div>}
       </main>
-
+      <Footer/>
     </>
   );
 }
