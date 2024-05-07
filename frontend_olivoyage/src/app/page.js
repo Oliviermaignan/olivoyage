@@ -14,14 +14,7 @@ export default function Home() {
     <>
      <Navbar/>
      <main>
-        {/* Affichage conditionnel en fonction de l'état du chargement et des erreurs */}
-        {loading && !error && <><div>Données en cours de chargement !</div></>}
-        {!loading && !error && data && (
-        <>
-        <div className="bg-warning">{data[0].id}</div>
-        </>
-        )}
-        {!loading && error && <div>Une erreur est survenue</div>}
+        <h1 className="text-align">landing page WiP</h1>
       </main>
       <Footer/>
     </>

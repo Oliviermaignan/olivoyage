@@ -40,7 +40,9 @@ export default function Voyages(props) {
                 {loading && !error && <><div>Données en cours de chargement !</div></>}
                 {!loading && !error && data && (
                 <>
+                <div className="m-5 d-flex">
                 <VoyageCard voyages={data}/>
+                </div>
                 </>
                 )}
                 {!loading && error && <div>Une erreur est survenue</div>}
