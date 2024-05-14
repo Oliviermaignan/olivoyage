@@ -10,7 +10,7 @@ export default function VoyageCard(props) {
     return (
         <>
             {props.voyages.map((voyage, index) => (
-                <div className="card m-4 p-1 w-25" id={voyage + index}>
+                <div className="card m-4 p-1 w-25 voyageCard" id={voyage + index}>
                     
                     <div className='p-3'>
                     <Link href={"/voyages/" + voyage.nom}> 

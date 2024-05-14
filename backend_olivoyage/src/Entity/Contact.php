@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\ContactRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
 class Contact
@@ -15,16 +16,24 @@ class Contact
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_contact_new')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_contact_new')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_contact_new')]
     private ?string $objetMessage = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups('api_contact_new')]
     private ?string $email = null;
+
+    #[ORM\Column(type: Types::TEXT)]
+    #[Groups('api_contact_new')]
+    private ?string $message = null;
 
     #[ORM\ManyToOne(inversedBy: 'contacts')]
     #[ORM\JoinColumn(nullable: false)]
@@ -79,6 +88,18 @@ class Contact
     public function setEmail(string $email): static
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): static
+    {
+        $this->message = $message;
 
         return $this;
     }

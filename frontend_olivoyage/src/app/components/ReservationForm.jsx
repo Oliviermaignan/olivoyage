@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useState} from "react";
-import toast from 'react-hot-toast'
+import toast from 'react-hot-toast';
 
 
 export default function ReservationForm(props) {
-  console.log(props);
   // Initialisation des états pour gérer le chargement, les erreurs, et les données reçues.
   const [loading, setLoading] = useState(false); // État de chargement des données.
   const [error, setError] = useState(false); // État pour capturer une éventuelle erreur lors du fetch.
@@ -27,6 +26,7 @@ export default function ReservationForm(props) {
     }
     const JSONFormData = JSON.stringify(formData);
 
+    //je passe le nom dans l'url pour le récup côté serveur ce qui me permet de retrouver mon voyage
     const response = await fetch("http://127.0.0.1:8000/api/client/new/" + props.nom, 
     {
       method: 'POST',
@@ -43,6 +43,7 @@ export default function ReservationForm(props) {
     setData(await response.json())
     toast.success("Merci pour votre réservation")
 
+    //reset des valeurs des champs
     event.target.nom.value = "";
     event.target.prenom.value = "";
     event.target.email.value = "";
@@ -51,7 +52,7 @@ export default function ReservationForm(props) {
     } catch (error) {
       // Capture the error message to display to the user
       setError(error.message)
-      toast.error('erreur')
+      toast.error("erreur lors de l'envoie de votre reservation")
     } finally {
       setLoading(false)
     }
