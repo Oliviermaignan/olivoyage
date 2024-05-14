@@ -23,18 +23,21 @@ export default function VoyageCardDetails(props) {
 
     return (
         <>
-        <div id="cardDetailsContainer" className="horizontal-card d-flex bg-light">
+        <div 
+        id="cardDetailsContainer" 
+        className="horizontal-card d-flex bg-warning-subtle"
+        >
             <div className="m-auto w-50 h-75 d-inline-block" id="cardDetailsImg">
                 <Image
                     src={'http://localhost:8000/images/'+props.image}
                     fill={true}
                     objectFit='cover'
-                    className='position-relative py-5 px-5'
+                    className='position-relative py-5 px-5 rounded'
                     alt={'image de' + props.nom}
                 />
             </div>
 
-            <div className="w-50 p-3 bg-light py-5 my-auto px-5" id="cardDetailsText">
+            <div className="w-50 p-3 bg-warning-subtle my-auto me-5 rounded" id="cardDetailsText">
 
                 <h1>{props.nom}</h1>
 
