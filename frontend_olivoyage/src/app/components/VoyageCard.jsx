@@ -1,19 +1,19 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link';
 import path from 'path';
 
 
 export default function VoyageCard(props) {
 
-
-    console.log(props.voyages[0]);
-
-    const imagePath = 'http://localhost:8000/images/' + props.voyages[0].image;
     return (
         <>
             {props.voyages.map((voyage, index) => (
-                <div className="card m-1" id={voyage + index} key={index}>
+                <div className="card m-4 p-1 w-25" id={voyage + index}>
+                    
+                    <div className='p-3'>
+                    <Link href={"/voyages/" + voyage.nom}> 
                         <Image 
                             src={'http://localhost:8000/images/'+voyage.image}
                             className='card-img-top position-relative'
@@ -21,13 +21,17 @@ export default function VoyageCard(props) {
                             fill={true}
                             objectFit='contain'
                         />
-                    
+                    </Link>  
+                    </div>
                     <div className="card-body">
                         <h5 className="card-title">{voyage.nom}</h5>
                         <p className="card-text">quick descrip aaaaaa</p>
-                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                        <Link href={"/voyages/" + voyage.nom} className="btn btn-primary">
+                        View voyage  🌍
+                        </Link>
                     </div>
                 </div>
+                
             ))}
         </>
     )

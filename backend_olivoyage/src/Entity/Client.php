@@ -17,16 +17,19 @@ class Client
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_client_new')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('api_client_new')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255)]
-    #[Groups('api_voyage_index')]
+    #[Groups(['api_voyage_index', 'api_client_new'])]
     private ?string $email = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Groups('api_client_new')]
     private ?string $message = null;
 
     #[ORM\ManyToOne(inversedBy: 'clients')]
@@ -35,7 +38,7 @@ class Client
 
     #[ORM\ManyToOne(inversedBy: 'clients')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?voyage $voyage = null;
+    private ?Voyage $voyage = null;
 
     public function getId(): ?int
     {
@@ -102,12 +105,12 @@ class Client
         return $this;
     }
 
-    public function getVoyage(): ?voyage
+    public function getVoyage(): ?Voyage
     {
         return $this->voyage;
     }
 
-    public function setVoyage(?voyage $voyage): static
+    public function setVoyage(?Voyage $voyage): static
     {
         $this->voyage = $voyage;
 

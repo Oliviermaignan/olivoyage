@@ -14,7 +14,7 @@ class Categorie
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Groups('api_voyage_index')]
+    #[Groups(['api_voyage_index', 'api_voyage_show'])]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]

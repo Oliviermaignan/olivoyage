@@ -29,18 +29,16 @@ export default function Voyages(props) {
         }
     }, []);
 
-    console.log(data);
-
     return (
         <>
         
         <Navbar/>
-            <main>
+            <main className="bg-light">
                 {/* Affichage conditionnel en fonction de l'état du chargement et des erreurs */}
                 {loading && !error && <><div>Données en cours de chargement !</div></>}
                 {!loading && !error && data && (
                 <>
-                <div className="m-5 d-flex">
+                <div className="d-flex flex-wrap justify-content-center">
                 <VoyageCard voyages={data}/>
                 </div>
                 </>

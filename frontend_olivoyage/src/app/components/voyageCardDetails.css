@@ -1,0 +1,26 @@
+@media screen and (max-width: 700px) { 
+    #cardDetailsContainer{
+     flex-direction: column;
+    }
+
+    #cardDetailsImg{
+        width: 90% !important;
+    }
+
+    #cardDetailsText{
+        text-align: center !important;
+        margin: auto !important;
+    }
+
+    #cardDetailsBtnContainer{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .cardDetailsBtnReserver, #cardDetailsBtnRetour{
+        margin: auto !important;
+        width: 60% !important;
+        margin-top: 2% !important;
+    }
+}

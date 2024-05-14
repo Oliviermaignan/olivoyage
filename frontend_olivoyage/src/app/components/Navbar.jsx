@@ -9,8 +9,12 @@ export default function Navbar() {
         <>
         
         
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
-            <div className="d-flex justify-content-between">
+        <nav 
+        className="navbar navbar-expand-lg bg-body-tertiary"
+        style={{ boxShadow: "0px 5px 10px -5px rgba(0, 0, 0, 0.25)"}}
+        >
+            <div className="d-flex flex-row justify-content-between">
+
                 <a className="navbar-brand m-3" href="#">OliVoyage</a>
 
                 <div className="collapse navbar-collapse" id="navbarNav">
@@ -26,6 +30,7 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
+
             </div>
         </nav>
 
