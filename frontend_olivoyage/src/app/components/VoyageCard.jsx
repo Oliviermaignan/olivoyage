@@ -10,16 +10,18 @@ export default function VoyageCard(props) {
     return (
         <>
             {props.voyages.map((voyage, index) => (
-                <div className="card m-4 p-1 w-25 voyageCard" id={voyage + index}>
+                <div className="card m-4 p-1 w-25 voyageCard" id={voyage + index} key={index}>
                     
                     <div className='p-3'>
-                    <Link href={"/voyages/" + voyage.nom}> 
+                    <Link href={"/voyages/" + voyage.nom} className='position-relative'> 
                         <Image 
                             src={'http://localhost:8000/images/'+voyage.image}
                             className='card-img-top position-relative'
                             alt="testImage"
-                            fill={true}
-                            objectFit='contain'
+                            fill
+                            priority 
+                            style={{objectFit:"contain"}}
+                            sizes="(max-width: 700px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                     </Link>  
                     </div>

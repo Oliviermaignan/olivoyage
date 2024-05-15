@@ -22,6 +22,7 @@ export default function Navbar() {
                 alt="Logo" 
                 width={75}
                 height={75}
+                priority
                 className="d-inline-block align-middle"/>
                 <span className="mx-4 fs-2">OliVoyage</span>
             </a>
