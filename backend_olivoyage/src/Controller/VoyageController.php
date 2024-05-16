@@ -10,10 +10,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/voyage', name: "app_voyage_")]
 class VoyageController extends AbstractController
 {
+    #[IsGranted('ROLE_ADMIN', statusCode: 423, message: "Vous n'avez pas les droits pour accéder à cette page")]
     #[Route('s', name: 'index', methods: ['GET'])]
     public function index(VoyageRepository $voyageRepository): Response
     {
@@ -22,6 +24,7 @@ class VoyageController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN', statusCode: 423, message: "Vous n'avez pas les droits pour accéder à cette page")]
     #[Route('/new', name: 'new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -42,6 +45,7 @@ class VoyageController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN', statusCode: 423, message: "Vous n'avez pas les droits pour accéder à cette page")]
     #[Route('/{id}', name: 'show', methods: ['GET'])]
     public function show(Voyage $voyage): Response
     {
@@ -50,6 +54,7 @@ class VoyageController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN', statusCode: 423, message: "Vous n'avez pas les droits pour accéder à cette page")]
     #[Route('/{id}/edit', name: 'edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Voyage $voyage, EntityManagerInterface $entityManager): Response
     {
@@ -68,6 +73,7 @@ class VoyageController extends AbstractController
         ]);
     }
 
+    #[IsGranted('ROLE_ADMIN', statusCode: 423, message: "Vous n'avez pas les droits pour accéder à cette page")]
     #[Route('/{id}', name: 'delete', methods: ['POST'])]
     public function delete(Request $request, Voyage $voyage, EntityManagerInterface $entityManager): Response
     {

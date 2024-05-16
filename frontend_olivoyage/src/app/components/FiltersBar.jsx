@@ -1,6 +1,6 @@
 "use client";
 
-import { Dropdown } from "bootstrap";
+// import { Dropdown } from "bootstrap";
 import { AppContext } from "@/app/AppContext";
 import { useContext } from "react";
 
@@ -36,22 +36,22 @@ export default function FiltersBar(props){
             </div>
             <div className="dropdown">
                 <button className="btn btn-info dropdown-toggle mx-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    Prix
                 </button>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Action</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                    <li><a className="dropdown-item" href="#">WIP</a></li>
+                    <li><a className="dropdown-item" href="#">WIP</a></li>
+                    <li><a className="dropdown-item" href="#">WIP</a></li>
                 </ul>
             </div>
             <div className="dropdown">
                 <button className="btn btn-info dropdown-toggle mx-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown button
+                    Date
                 </button>
                 <ul className="dropdown-menu">
-                    <li><a className="dropdown-item" href="#">Action</a></li>
-                    <li><a className="dropdown-item" href="#">Another action</a></li>
-                    <li><a className="dropdown-item" href="#">Something else here</a></li>
+                    <li><a className="dropdown-item" href="#">WIP</a></li>
+                    <li><a className="dropdown-item" href="#">WIP</a></li>
+                    <li><a className="dropdown-item" href="#">WIP</a></li>
                 </ul>
             </div>
         </div>

@@ -16,7 +16,7 @@ export default function Navbar() {
         }}
         >
             <div className="container-fluid">
-            <a className="navbar-brand mx-4" href="#">
+            <a className="navbar-brand mx-4" href="/">
                 <Image 
                 src="http://localhost:8000/images/logo.png" 
                 alt="Logo" 

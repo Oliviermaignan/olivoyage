@@ -3,6 +3,13 @@
 {% block title %}Voyage index{% endblock %}
 
 {% block body %}
+
+
+
+{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+    <a class="link" href="{{ path('app_logout') }}">Logout</a>
+{% endif %}
+
     <h1>Voyage index</h1>
 
     <table class="table">

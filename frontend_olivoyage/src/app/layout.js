@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import AppContextProvider from "./AppContext";
+import BootstrapClient from "./components/BootstrapClient";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,6 +22,7 @@ export default function RootLayout({ children }) {
       <Toaster position="top-right"></Toaster>
       <AppContextProvider>
         <div>{children}</div>
+      <BootstrapClient />
       </AppContextProvider>
     </body>
     </html>
