@@ -79,7 +79,7 @@ Bien sûr, voici la section mise à jour :
 
 Une fois votre application Symfony 7 configurée et prête à être exécutée, vous pouvez démarrer le serveur Symfony pour commencer à développer et tester votre application.
 
-### Utilisation de la Commande Symfony (utilisateur ubuntu)
+### Utilisation de la Commande Symfony (utilisateurs.ices ubuntu)
 
 Pour démarrer le serveur Symfony en arrière-plan sans TLS (HTTPS), utilisez la commande suivante depuis le répertoire racine de votre projet :
 
